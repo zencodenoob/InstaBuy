@@ -14,7 +14,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 
     List<Product> findAll();
     Optional<Product> findById(Long id);
-    List<Product> findBYCategory(String productCategory);
+    List<Product> findByCategory(String productCategory);
 
     default List<Product> findAtMostNumberOfProducts(int numberOfProducts) {
         Page<Product> page = findAll(PageRequest.of(0, numberOfProducts));
